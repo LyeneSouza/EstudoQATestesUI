@@ -4,30 +4,27 @@ Testes funcionais utilizando Selenium Webdriver
 
 ### Desafio ###
 
-O impulsionando deverá construir os testes funcionais para adicionar um produto em um carrinho e alterar os dados do mesmo. Você poderá automatizar um produto simples. Exemplo: Livro
+O impulsionando deverá construir os testes funcionais para o site de buscas de CEP dos correios conforme as funcionalidades descritas nos requisitos.
 
 ### Descrição ###
 
-Deverá ser entregue um projeto com os testes automatizados com Selenium Webdriver a partir das funcionalidades descritas.
-Para construir os testes utilize o site : https://www.casasbahia.com.br/
-
+Deverá ser entregue um projeto com os testes automatizados com Selenium Webdriver a partir das funcionalidades descritas. 
+Para construir os testes utilize o site : https://buscacepinter.correios.com.br/app/endereco/index.php
 
 ### Requisitos e Funcionalidades Esperadas ###
 
-- [ ] Construir os testes automatizados conforme as 3 funcionalidades listadas.
-	- [ ] 1. **Funcionalidade 1**: Adicionar produtos ao carrinho de compras
-		* O cliente não deve estar logado no e-commerce
-		* Fazer a busca de um item 
-    	* Selecionar o item
-    	* Incluir o mesmo ao carrinho clicando no botão comprar
-    	* Ao fim deverá ser direcionado para a tela de carrinho e deverá listar o item 
-	- [ ] 2. **Funcionalidade 2** : Alterar produtos no carrinho de compras
-		* Alterar as quantidades e verificar se o mesmo está sendo atualizado no resumo do carrinho
-		* Remover produtos e verificar se está apresentando informação ao usuário que a Carrinho vazio!.
-	- [ ] 3. **Funcionalidade 3** : Incluir o Cep no carrinho de compras
-		* Deverá alertar o usuário quando cep inválido
-		* Deve retornar as opções de frete caso o CEP válido
-		* Verificar se o valor do frete está sendo atualizado no resumo do carrinho
+- [ ] Construir os testes automatizados conforme as funcionalidades listadas.
+	- [ ] 1. **Funcionalidade 1**: Busca por endereço ou CEP 
+		* Deverá ser permitido buscar por endereço OU Cep 
+		* O cep ou endereço é um campo obrigatório
+    	* Após apresentar o resultado deverá permitir fazer Nova busca 
+	- [ ] 2. **Funcionalidade 2** : Fazer a busca Por Localidade / Logradouro
+		* A busca deverá retornar o cep da combinação inserida nos filtros 
+		* Deverá permitir fazer nova busca 
+		* Validar o preenchimento dos campos obrigatórios  
+		* O campo localidade deve possuir um "?" E listar as localidades , considerando a localidade como cidade 
+		* O campo logradouro corresponde ao endereço como por exemplo Rua/ Avenida  que estão listadas na combo tipo
+
 - [ ] Criar todos os cenários para as funcionalidades solicitadas.
 - [ ] Utilizar BDD(Gerkin) com Cucumber nas escritas dos cenários.
 - [ ] O teste deverá ser desenvolvido usando Selenium Webdriver – Java – Junit;
