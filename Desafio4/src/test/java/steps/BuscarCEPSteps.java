@@ -46,10 +46,11 @@ public class BuscarCEPSteps {
 
     @Então("recebo o resultado da busca")
     public void receboOResultadoDaBusca() {
-        //WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        //wait.until(ExpectedConditions.presenceOfElementLocated(By.id("//*[@id='painel_form_consulta']")));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.id("resultado-DNEC")));
 
-//        String nome = driver.findElement(By.xpath("//table[@id='resultado-DNEC']/tbody//td[1]")).getText();
+        String nome = driver.findElement(By.id("resultado-DNEC")).getText();
+        System.out.println(nome);
         //String nome = driver.findElement(By.xpath("//*[@id='resultado-DNEC']/tbody/tr/td[1]")).getAttribute("value");
 //        String bairro = driver.findElement(By.xpath("//table[@id='resultado-DNEC']/tbody/tr/td[2]")).getText();
 //        String localidade = driver.findElement(By.xpath("//table[@id='resultado-DNEC']/tbody/tr/td[3]")).getText();

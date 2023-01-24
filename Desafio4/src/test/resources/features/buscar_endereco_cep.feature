@@ -8,22 +8,56 @@ Funcionalidade: Buscar por endereço ou CEP
 Contexto:
   Dado que estou acessando a aplicação
 
-#Cenário: Deve realizar busca por CEP com sucesso
+#Cenário: Deve realizar busca por todos os tipos de CEP com sucesso
 #  Quando informo o CEP "80020270"
 #  E informo o tipo do CEP "Todos"
 #  E seleciono Buscar
-#  Então recebo o resultado da busca
+#  Então recebo, como resultado, o nome "Rua Treze de Maio - até 469/470"
+#
+#Cenário: Deve realizar busca por CEP do tipo "Localidade/Logradouro" com sucesso
+#  Quando informo o CEP "80020270"
+#  E informo o tipo do CEP "Localidade/Logradouro"
+#  E seleciono Buscar
+#  Então recebo, como resultado, o nome "Rua Treze de Maio - até 469/470"
+#
+#Cenário: Deve realizar busca por CEP do tipo "CEP Promocional" com sucesso
+#  Quando informo o CEP "05909960"
+#  E informo o tipo do CEP "CEP Promocional"
+#  E seleciono Buscar
+#  Então recebo, como resultado, o nome "Baú da Felicidade da Jequiti"
+#
+#Cenário: Deve realizar busca por CEP do tipo "Caixa Postal Comunitária" com sucesso
+#  Quando informo o CEP "30666990"
+#  E informo o tipo do CEP "Caixa Postal Comunitária"
+#  E seleciono Buscar
+#  Então recebo, como resultado, o nome "Rua Duzentos e Oitenta e Um CPC Conselho Regional de Apoio Social"
+#
+#Cenário: Deve realizar busca por CEP do tipo "Grande Usuário" com sucesso
+#  Quando informo o CEP ""
+#  E informo o tipo do CEP "Grande Usuário"
+#  E seleciono Buscar
+#  Então recebo, como resultado, o nome ""
+#
+#Cenário: Não deve exibir resultados para busca inválida
+#  Quando informo o CEP "80020270"
+#  E informo o tipo do CEP "CEP Promocional"
+#  E seleciono Buscar
+#  Então recebo o aviso "Não há dados a serem exibidos"
+#
+#Cenário: Deve validar regras de busca
+#  Quando informo o CEP ""
+#  E informo o tipo do CEP "Todos"
+#  E seleciono Buscar
+#  Então recebo a mensagem "Informe o Endereço com no mínimo 2(dois) caracteres!"
 
-Cenário: Não deve exibir resultados para busca inválida
+Cenário: Deve validar regras de busca
   Quando informo o CEP "80020270"
   E informo o tipo do CEP "Todos"
   E seleciono Buscar
-  Então recebo o aviso
+  Então recebo o resultado da busca
 
-Cenário: Deve validar regras de busca
-  Quando informo o tipo do CEP "Todos"
-  E seleciono Buscar
-  Então recebo a mensagem
+
+
 
 #Contexto:
 #  Dado que estou acessando a aplicação
