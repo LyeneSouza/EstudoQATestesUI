@@ -6,7 +6,7 @@ Funcionalidade: Buscar por endereço ou CEP
   Para que eu possa preencher os dados de envio corretamente
 
 Contexto:
-  Dado que estou acessando a aplicação
+  Dado que estou acessando a página de busca por CEP ou endereço
 
 Esquema do Cenário: Deve realizar busca por CEP ou endereço com sucesso
   Quando informo o CEP ou o endereço "<cepOuEnd>"
@@ -30,9 +30,9 @@ Exemplos:
   |           AC Orleans          |   Unidade Operacional    |                           88870-970                              |
 
 Cenário: Deve realizar nova busca por CEP ou endereço com sucesso
-  Quando realizo uma busca
+  Quando realizo uma busca por CEP ou endereço
   E seleciono Nova Busca
-  Então posso realizar uma nova busca
+  Então posso realizar uma nova busca por CEP ou endereço
 
 Esquema do Cenário: Não deve exibir resultados para busca inválida
   Quando informo o CEP ou o endereço "<cep>"

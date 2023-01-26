@@ -3,30 +3,37 @@
 Funcionalidade: Buscar por localidade ou logradouro
   Como um usuário dos Correios
   Eu quero realizar uma busca por localidade ou logradouro
-  Para que eu possa preencher os dados de envio corretamente
+  Para que eu possa saber o CEP corretamente
 
-Cenário: Deve realizar busca por localidade ou logradouro com sucesso
-#  Dado que estu acessando a aplicação
-#  Quando digito
+Contexto:
+  Dado que estou acessando a página de busca por localidade ou logradouro
 
+#Esquema do Cenário: Deve realizar busca por localidade ou logradouro com sucesso
 
+Cenário: Deve realizar nova busca por localidade ou logradouro com sucesso
+  Quando realizo uma busca por localidade ou logradouro
+  E clico em Nova Busca
+  Então posso realizar uma nova busca por localidade ou logradouro
 
-#Contexto:
-#  Dado que estou acessando a aplicação
-#  Quando informo o usuário "lyene@souza"
-#  E a senha "1234"
-#  E seleciono entrar
-#  Então visualizo a página inicial
-#  Quando seleciono Contas
-#  E seleciono Adicionar
-#
-#Esquema do Cenário: Deve validar regras de cadastro de contas
-#  Quando informo a conta "<conta>"
-#  E seleciono Salvar
-#  Então recebo a mensagem <mensagem>
-#
-#Exemplos:
-#  |        conta       |               mensagem               |
-#  |   Conta de Teste   |    "Conta adicionada com sucesso!"   |
-#  |                    |       "Informe o nome da conta"      |
-#  |  Conta mesmo nome  | "Já existe uma conta com esse nome!" |
+Cenário: Não deve exibir resultados para busca inválida
+  Quando informo a UF "MA"
+  E informo a localidade "abc"
+  E informo o tipo "Todos"
+  E informo o logradouro "abc"
+  E clico em Buscar
+  Então recebo o aviso informativo "Não há dados a serem exibidos"
+
+Esquema do Cenário: Deve validar regras de busca e não deve exibir resultados para busca inválida
+  Quando informo a UF "<uf>"
+  E informo a localidade "<localidade>"
+  E informo o tipo "<tipo>"
+  E informo o logradouro "<logradouro>"
+  E informo o número ou lote ou apto ou casa "<numero>"
+  E clico em Buscar
+  Então recebo a mensagem informativa "<mensagem>"
+
+Exemplos:
+  | uf | localidade | tipo | logradouro | numero |                           mensagem                            |
+  |    |            |      |            |        |                        Selecione a UF!                        |
+  | CE |            |      |            |        | Informe o nome completo da Cidade/Município/Distrito/Povoado! |
+  | AC |   Jordão   |      |            |        |                 Informe o nome do Logradouro!                 |

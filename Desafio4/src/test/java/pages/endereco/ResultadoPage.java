@@ -1,4 +1,4 @@
-package pages;
+package pages.endereco;
 
 import core.BasePage;
 

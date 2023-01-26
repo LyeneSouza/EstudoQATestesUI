@@ -5,19 +5,19 @@ import io.cucumber.java.After;
 import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.Então;
 import io.cucumber.java.pt.Quando;
-import pages.BuscaPage;
-import pages.ResultadoPage;
+import pages.endereco.BuscaPage;
+import pages.endereco.ResultadoPage;
 
 import static core.DriverFactory.killDriver;
 import static org.junit.Assert.*;
 
-public class BuscarCEPSteps {
+public class BuscarCEPEnderecoSteps {
 
     BuscaPage buscaPage = new BuscaPage();
     ResultadoPage resultadoPage = new ResultadoPage();
 
-    @Dado("que estou acessando a aplicação")
-    public void queEstouAcessandoAAplicação() {
+    @Dado("que estou acessando a página de busca por CEP ou endereço")
+    public void queEstouAcessandoAPaginaDeBuscaPorCEPOuEndereco() {
         buscaPage.acessarPagina();
     }
 
@@ -31,8 +31,8 @@ public class BuscarCEPSteps {
         buscaPage.tipoCep(string);
     }
 
-    @Quando("realizo uma busca")
-    public void realizoUmaBusca() {
+    @Quando("realizo uma busca por CEP ou endereço")
+    public void realizoUmaBuscaPorCEPOuEndereco() {
         buscaPage.escreverCepOuEnd("80020-270");
         buscaPage.tipoCep("Todos");
         selecionoBuscar();
@@ -66,9 +66,9 @@ public class BuscarCEPSteps {
         assertEquals(string, msg);
     }
 
-    @Então("posso realizar uma nova busca")
-    public void possoRealizarUmaNovaBusca() {
-        realizoUmaBusca();
+    @Então("posso realizar uma nova busca por CEP ou endereço")
+    public void possoRealizarUmaNovaBuscaPorCEPOuEndereco() {
+        realizoUmaBuscaPorCEPOuEndereco();
         receboOResultado("Rua Treze de Maio - até 469/470");
     }
 
