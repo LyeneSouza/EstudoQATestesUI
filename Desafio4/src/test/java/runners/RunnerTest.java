@@ -20,8 +20,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 )
 public class RunnerTest {
 
-    private static WebDriver driver;
-
+//    private static WebDriver driver;
+//
 //    @BeforeClass
 //    public static void reset() {
 //        driver = new ChromeDriver();

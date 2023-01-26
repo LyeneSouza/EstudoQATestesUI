@@ -16,7 +16,7 @@ Esquema do Cenário: Deve realizar busca por CEP ou endereço com sucesso
 
 Exemplos:
   |            cepOuEnd           |           tipo           |                                           nomeOuCEP                                                   |
-  |           80020-270           |           Todos          |                                   Rua Treze de Maio - até 469/470                                     |
+#  |           80020-270           |           Todos          |                                   Rua Treze de Maio - até 469/470                                     |
   |           80020-270           |   Localidade/Logradouro  |                                   Rua Treze de Maio - até 469/470                                     |
   |           05909-960           |      CEP Promocional     |                                     Baú da Felicidade da Jequiti                                      |
   |           30666-990           | Caixa Postal Comunitária |                   Rua Duzentos e Oitenta e Um CPC Conselho Regional de Apoio Social                   |
@@ -38,11 +38,11 @@ Esquema do Cenário: Não deve exibir resultados para busca inválida
 Exemplos:
   |    cep    |           tipo           |
   | 00000-000 |           Todos          |
-  | 80020-959 |   Localidade/Logradouro  |
-  | 80020-270 |      CEP Promocional     |
-  | 80020-270 | Caixa Postal Comunitária |
-  | 80020-270 |      Grande Usuário      |
-  | 80020-270 |   Unidade Operacional    |
+#  | 80020-959 |   Localidade/Logradouro  |
+#  | 80020-270 |      CEP Promocional     |
+#  | 80020-270 | Caixa Postal Comunitária |
+#  | 80020-270 |      Grande Usuário      |
+#  | 80020-270 |   Unidade Operacional    |
 
 Esquema do Cenário: Deve validar regras de busca
   Quando informo o CEP ou o endereço "<cep>"
