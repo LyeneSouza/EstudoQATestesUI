@@ -16,9 +16,19 @@ import static core.DriverFactory.getDriver;
 
 public class BasePage {
 
-    public void esperar(String id) {
+    public void esperarSerClicavel(String id) {
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.elementToBeClickable(By.id(id)));
+    }
+
+    public void esperarPorId(String id) {
         WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
         wait.until(ExpectedConditions.presenceOfElementLocated(By.id(id)));
+    }
+
+    public void esperarNaoVazio(String id) {
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.not(ExpectedConditions.textToBe(By.id(id), "")));
     }
 
     public void escrever(By by, String texto) {

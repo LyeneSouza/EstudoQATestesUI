@@ -5,11 +5,17 @@ import core.BasePage;
 public class ResultadoPage extends BasePage {
 
     public String obterResultado() {
-        esperar("resultado-DNEC");
+        esperarNaoVazio("resultado-DNEC");
         return obterTexto("resultado-DNEC");
     }
 
     public String mensagemFalha() {
-        return obterTexto("mensagem-resultado-alerta");
+        esperarNaoVazio("mensagem-resultado");
+        return obterTexto("mensagem-resultado");
+    }
+
+    public void novaBusca() {
+        esperarSerClicavel("btn_nbusca");
+        clicarBotao("btn_nbusca");
     }
 }

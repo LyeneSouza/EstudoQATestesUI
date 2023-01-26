@@ -13,7 +13,6 @@ public class Propriedades {
 
     public enum TipoExecucao { // Define as formas possiveis de execucao
         LOCAL,
-        GRID,
-        NUVEM // Opcao para rodar com o Saucelabs
+        GRID
     }
 }

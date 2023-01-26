@@ -14,7 +14,6 @@ import java.net.URL;
 
 public class DriverFactory {
 
-    //private static WebDriver driver;
     private static ThreadLocal<WebDriver> threadDriver = new ThreadLocal<WebDriver>() { // Para deixar um driver para cada thread na execucao em paralelo do maven
         @Override
         protected synchronized WebDriver initialValue() {
@@ -60,28 +59,6 @@ public class DriverFactory {
             }
             try {
                 driver = new RemoteWebDriver(new URL("http://192.168.0.252:4444/wd/hub"), capabilities);
-            } catch (MalformedURLException e) {
-                System.err.println("Falha na conexão com o GRID");
-                throw new RuntimeException(e);
-            }
-        } else if(Propriedades.TIPO_EXECUCAO == Propriedades.TipoExecucao.NUVEM) { // Configura para apontar para o Saucelabs
-            DesiredCapabilities capabilities = new DesiredCapabilities();
-
-            switch (Propriedades.BROWSER) { // Instancia de acordo com a propriedade setada
-                case FIREFOX:
-                    FirefoxOptions firefoxOptions = new FirefoxOptions();
-                    capabilities.setCapability(FirefoxOptions.FIREFOX_OPTIONS, firefoxOptions);
-                    firefoxOptions.merge(capabilities);
-                    break;
-                case CHROME:
-                    ChromeOptions chromeOptions = new ChromeOptions();
-                    capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
-                    chromeOptions.merge(capabilities);
-                    break;
-            }
-            try {
-                driver = new RemoteWebDriver(
-                        new URL("https://oauth-lyene.benvenutti-1f338:7344e73b-d086-4b59-b824-9b1c2a8d377a@ondemand.us-west-1.saucelabs.com:443/wd/hub"), capabilities);
             } catch (MalformedURLException e) {
                 System.err.println("Falha na conexão com o GRID");
                 throw new RuntimeException(e);

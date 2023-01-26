@@ -15,19 +15,24 @@ Esquema do Cenário: Deve realizar busca por CEP ou endereço com sucesso
   Então recebo o resultado "<nomeOuCEP>"
 
 Exemplos:
-  |            cepOuEnd           |           tipo           |                                           nomeOuCEP                                                   |
-#  |           80020-270           |           Todos          |                                   Rua Treze de Maio - até 469/470                                     |
-  |           80020-270           |   Localidade/Logradouro  |                                   Rua Treze de Maio - até 469/470                                     |
-  |           05909-960           |      CEP Promocional     |                                     Baú da Felicidade da Jequiti                                      |
-  |           30666-990           | Caixa Postal Comunitária |                   Rua Duzentos e Oitenta e Um CPC Conselho Regional de Apoio Social                   |
-  |           80020-959           |      Grande Usuário      | Rua Emiliano Perneta, 288 Lojas 06 e 07 Clique e Retire Correios AGF Emiliano Perneta Clique e Retire |
-  |           88870-970           |   Unidade Operacional    |                             Rua Quinze de Novembro, 305 Sala 03 AC Orleans                            |
-  |       Rua Generis Calvo       |           Todos          |                                               82800-070                                               |
-  |       Rua Generis Calvo       |   Localidade/Logradouro  |                                               82800-070                                               |
-  | Baú da Felicidade da Jequiti  |      CEP Promocional     |                                               05909-960                                               |
-  |  Rua Duzentos e Oitenta e Um  | Caixa Postal Comunitária |                                               30666-990                                               |
-  | Correios AGF Emiliano Perneta |      Grande Usuário      |                                               80020-959                                               |
-  |           AC Orleans          |   Unidade Operacional    |                                               88870-970                                               |
+  |            cepOuEnd           |           tipo           |                          nomeOuCEP                               |
+  |           80020-270           |           Todos          |                 Rua Treze de Maio - até 469/470                  |
+  |           80020-270           |   Localidade/Logradouro  |                 Rua Treze de Maio - até 469/470                  |
+  |           05909-960           |      CEP Promocional     |                   Baú da Felicidade da Jequiti                   |
+  |           30666-990           | Caixa Postal Comunitária |                   Rua Duzentos e Oitenta e Um                    |
+  |           80020-959           |      Grande Usuário      | Rua Emiliano Perneta, 288 Lojas 06 e 07 Clique e Retire Correios |
+  |           88870-970           |   Unidade Operacional    |                  Rua Quinze de Novembro, 305 Sala 03             |
+  |       Rua Generis Calvo       |           Todos          |                           82800-070                              |
+  |       Rua Generis Calvo       |   Localidade/Logradouro  |                           82800-070                              |
+  | Baú da Felicidade da Jequiti  |      CEP Promocional     |                           05909-960                              |
+  |  Rua Duzentos e Oitenta e Um  | Caixa Postal Comunitária |                           30666-990                              |
+  | Correios AGF Emiliano Perneta |      Grande Usuário      |                           80020-959                              |
+  |           AC Orleans          |   Unidade Operacional    |                           88870-970                              |
+
+Cenário: Deve realizar nova busca por CEP ou endereço com sucesso
+  Quando realizo uma busca
+  E seleciono Nova Busca
+  Então posso realizar uma nova busca
 
 Esquema do Cenário: Não deve exibir resultados para busca inválida
   Quando informo o CEP ou o endereço "<cep>"
@@ -38,11 +43,11 @@ Esquema do Cenário: Não deve exibir resultados para busca inválida
 Exemplos:
   |    cep    |           tipo           |
   | 00000-000 |           Todos          |
-#  | 80020-959 |   Localidade/Logradouro  |
-#  | 80020-270 |      CEP Promocional     |
-#  | 80020-270 | Caixa Postal Comunitária |
-#  | 80020-270 |      Grande Usuário      |
-#  | 80020-270 |   Unidade Operacional    |
+  | 80020-959 |   Localidade/Logradouro  |
+  | 80020-270 |      CEP Promocional     |
+  | 80020-270 | Caixa Postal Comunitária |
+  | 80020-270 |      Grande Usuário      |
+  | 80020-270 |   Unidade Operacional    |
 
 Esquema do Cenário: Deve validar regras de busca
   Quando informo o CEP ou o endereço "<cep>"
