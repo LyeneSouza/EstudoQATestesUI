@@ -22,13 +22,13 @@ public class BuscarCEPEnderecoSteps {
     }
 
     @Quando("informo o CEP ou o endereço {string}")
-    public void informoOCEPOuOEndereco(String string) {
-        buscaPage.escreverCepOuEnd(string);
+    public void informoOCEPOuOEndereco(String cepOuEnd) {
+        buscaPage.escreverCepOuEnd(cepOuEnd);
     }
 
     @Quando("informo o tipo do CEP {string}")
-    public void informoOTipoDoCEP(String string) {
-        buscaPage.tipoCep(string);
+    public void informoOTipoDoCEP(String tipo) {
+        buscaPage.tipoCep(tipo);
     }
 
     @Quando("realizo uma busca por CEP ou endereço")
@@ -49,21 +49,21 @@ public class BuscarCEPEnderecoSteps {
     }
 
     @Então("recebo o resultado {string}")
-    public void receboOResultado(String string) {
+    public void receboOResultado(String nome) {
         String resultado = resultadoPage.obterResultado();
-        assertTrue(resultado.contains(string));
+        assertTrue(resultado.contains(nome));
     }
 
     @Então("recebo a mensagem {string}")
-    public void receboAMensagem(String string) {
-        String msg = buscaPage.mensagemFalha();
-        assertEquals(string, msg);
+    public void receboAMensagem(String mensagem) {
+        String msgFalha = buscaPage.mensagemFalha();
+        assertEquals(mensagem, msgFalha);
     }
 
     @Então("recebo o aviso {string}")
-    public void receboOAviso(String string) {
-        String msg = resultadoPage.mensagemFalha();
-        assertEquals(string, msg);
+    public void receboOAviso(String aviso) {
+        String msgFalha = resultadoPage.mensagemFalha();
+        assertEquals(aviso, msgFalha);
     }
 
     @Então("posso realizar uma nova busca por CEP ou endereço")

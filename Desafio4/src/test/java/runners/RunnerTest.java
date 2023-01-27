@@ -7,7 +7,8 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         plugin = {"pretty"},
-        features = "src\\test\\resources\\features",
+        features = "src\\test\\resources\\features\\buscar_localidade_logradouro.feature",
+        // ########## lembrar de arrumar o runner para rodar as duas features ############
         glue = "steps",
         stepNotifications = true,
         snippets = CucumberOptions.SnippetType.CAMELCASE,
