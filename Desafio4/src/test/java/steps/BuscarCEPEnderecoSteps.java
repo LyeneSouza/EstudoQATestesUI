@@ -1,14 +1,11 @@
 package steps;
 
-import core.Propriedades;
-import io.cucumber.java.After;
 import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.Então;
 import io.cucumber.java.pt.Quando;
 import pages.endereco.BuscaPage;
 import pages.endereco.ResultadoPage;
 
-import static core.DriverFactory.killDriver;
 import static org.junit.Assert.*;
 
 public class BuscarCEPEnderecoSteps {
@@ -70,12 +67,5 @@ public class BuscarCEPEnderecoSteps {
     public void possoRealizarUmaNovaBuscaPorCEPOuEndereco() {
         realizoUmaBuscaPorCEPOuEndereco();
         receboOResultado("Rua Treze de Maio - até 469/470");
-    }
-
-    @After
-    public void fecharBrowser() {
-        if(Propriedades.FECHAR_BROWSER) {
-            killDriver();
-        }
     }
 }

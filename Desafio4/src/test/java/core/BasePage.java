@@ -1,13 +1,14 @@
 package core;
 
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
+import io.cucumber.core.api.Scenario;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.File;
+import java.io.IOException;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +16,16 @@ import java.util.List;
 import static core.DriverFactory.getDriver;
 
 public class BasePage {
+
+    public static void screenshot(Scenario cenario) {
+        File file = ((TakesScreenshot) getDriver()).getScreenshotAs(OutputType.FILE);
+        try {
+            FileUtils.copyFile(file, new File("target" + File.separator + "screenshot" +
+                    File.separator + cenario.getName() + "." + cenario.getLine() + ".jpg"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     public void esperarSerClicavel(String id) {
         WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));

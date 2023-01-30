@@ -1,14 +1,11 @@
 package steps;
 
-import core.Propriedades;
-import io.cucumber.java.After;
 import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.Então;
 import io.cucumber.java.pt.Quando;
 import pages.localidade.BuscaPage;
 import pages.localidade.ResultadoPage;
 
-import static core.DriverFactory.killDriver;
 import static org.junit.Assert.*;
 
 public class BuscarLocalidadeLogradouroSteps {
@@ -107,12 +104,5 @@ public class BuscarLocalidadeLogradouroSteps {
     public void receboAMensagemInformativa(String mensagem) {
         String msgFalha = buscaPage.mensagemFalha();
         assertEquals(mensagem, msgFalha);
-    }
-
-    @After
-    public void fecharBrowser() {
-        if(Propriedades.FECHAR_BROWSER) {
-            killDriver();
-        }
     }
 }
