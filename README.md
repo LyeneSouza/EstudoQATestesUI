@@ -40,3 +40,11 @@ mvn clean compile
 ```shell
 mvn test
 ```
+
+## Bônus ##
+
+### Como rodar utilizando o Jenkins ###
+- Ter o Jenkins instalado
+- Criar uma pipeline
+- Configurar a pipeline para acessar este repositório e ter acesso ao Jenkinsfile
+- Rodar o build da pipeline
