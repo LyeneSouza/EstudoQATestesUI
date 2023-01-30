@@ -47,7 +47,7 @@ Exemplos:
   | uf | letra |    cidade    |  localidade  |
   | BA |   P   |   Palmeiras  |   Palmeiras  |
   | MT |   D   |    Denise    |    Denise    |
-  | SC |   C   | Cocal do SUl | Cocal do Sul |
+  | SC |   C   | Cocal do Sul | Cocal do Sul |
 
 Cenário: Deve realizar nova busca por localidade ou logradouro com sucesso
   Quando realizo uma busca por localidade ou logradouro

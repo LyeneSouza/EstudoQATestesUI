@@ -20,7 +20,7 @@ public class BuscaPage extends BasePage {
     }
 
     public String verificarLocalidade() {
-        return obterTexto("localidade");
+        return obterValorCampo("localidade");
     }
 
     public void clicarEmAjuda() {
@@ -28,12 +28,12 @@ public class BuscaPage extends BasePage {
     }
 
     public void selecionarLetra(String letra) {
-        // nao esta funcionando!! Arrumar!
-//        String texto = obterTexto();
-//        clicarLink(letra);
+        esperarSerClicavel("div_modal_letra_localidade");
+        clicarLink(letra);
     }
 
     public void selecionarCidade(String cidade) {
+        esperarNaoVazio("resultado-DNEC-localidade");
         clicarLink(cidade);
     }
 
